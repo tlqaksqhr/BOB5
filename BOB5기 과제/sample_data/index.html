@@ -1,0 +1,287 @@
+
+<!DOCTYPE html>
+
+
+<html class="no-js" lang="en" data-useragent="Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; Trident/6.0)">
+<head>
+	<title>대문</title>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<meta property="fb:app_id" content="892313440881489" />
+	<link rel="stylesheet" href="/theme/joinc/css/foundation.css" />
+	<link rel="stylesheet" href="/theme/joinc/css/default.css" />
+	<link rel="stylesheet" href="/theme/joinc/css/icons/foundation-icons.css" />
+
+	<script src="/theme/joinc/js/vendor/what-input.min.js"></script>
+	<script src="/theme/joinc/js/vendor/jquery.min.js"></script>
+	<script src="/theme/joinc/js/foundation.js"></script>
+	<style type="text/css" media="screen">
+	</style>
+</head>
+<style>
+.title-bar {
+background: #333;
+padding: 0.9rem; }
+
+.top-bar {
+	background: #333; 
+}
+.top-bar ul {
+	background: #333; 
+}
+.top-bar ul li {
+	background: #333; 
+}
+.top-bar ul li a {
+	color: #fff; 
+}
+
+.menu-text {
+	color: #fff; 
+}
+@media only screen and (max-width: 40em) {
+  .menu-text {
+   	 display: none !important; 
+	} 
+}
+
+@media only screen and (min-width: 40em) {
+	.menu:last-child {
+    border-left: 1px solid #4e4e4e; 
+	}
+  .menu:first-child {
+    border-left: none; 
+	}
+  .menu li:not(:last-child) {
+		border-right: 1px solid #4e4e4e; 
+	} 
+}
+.dropdown.menu .submenu {
+	border: none; 
+}
+
+.dropdown.menu .is-dropdown-submenu-parent.is-right-arrow > a::after {
+  border-color: #fff transparent transparent; 
+}
+.is-drilldown-submenu-parent > a::after {
+	border-color: transparent transparent transparent #fff; 
+}
+.js-drilldown-back::before {
+	border-color: transparent #fff transparent transparent; 
+}
+</style>
+<body>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+var js, fjs = d.getElementsByTagName(s)[0];
+if (d.getElementById(id)) return;
+js = d.createElement(s); js.id = id;
+js.src = "//connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v2.5&appId=892313440881489";
+fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+</script>
+	<div class="title-bar" data-responsive-toggle="main-menu" data-hide-for="medium">
+		<button class="menu-icon" type="button" data-toggle></button>
+		<div class="title-bar-title">Menu</div>
+	</div>
+	<div class="top-bar" id="main-menu">
+		<div class="top-bar-left">
+			<ul class="dropdown menu" data-dropdown-menu>
+				<li class="menu-text"><a href="/w/FrontPage">Joinc</a></li>
+				<li class="has-submenu">
+				
+						</li>
+						
+					  	<li class="menu-text"><a href="/w/About">About</a></li>
+						<li class="menu-text"><a data-open="pageInfo">문서정보</a></li>
+					  	<li class="menu-text"><a href="/w/Login">로그인</a></li>
+						
+				</ul>
+			</div>
+			<div class="top-bar-right">
+				<form method="post" action="http://www.joinc.co.kr/w/search">
+				<ul class="menu">
+						
+					<li><input type="submit" class="button" value="검색"></li>
+				</ul>
+				</form>
+			</div>
+		</div>
+		<div class="reveal" id="pageInfo" data-reveal>
+				<h2 id="modalTitle">문서정보</h2>
+				<ul>
+						<li>문서이름 : FrontPage</li>
+						<li>문서아이디 : 4</li>
+						<li>저자 : yundream</li>
+						<li>생성일 : 2015-12-11 18:25:48</li>
+						<li>업데이트 : 2016-04-09 16:09:14</li>
+				</ul>
+				<button class="close-button" data-close aria-label="Close reveal" type="button">
+						<span aria-hidden="true">&times;</span>
+				</button>
+		</div>
+	<div class="contents">
+  	<div class="row">
+		
+	</div>
+	<div class="row">
+	
+	
+		<script>
+$(function() {
+	var pathname = window.location.pathname
+	var dirent = pathname.split("/")
+
+	var str = '<ul class="breadcrumbs">'
+	var currentdir=''
+	for (i = 2; i < dirent.length; i++) {
+		currentdir += '/'+dirent[i]
+		str += '<li><a href="/w'+currentdir+'">'+dirent[i]+'</a></li>'
+	}
+	str += '</ul>'
+	$("#jpath").html(str)
+})
+		</script>
+		<div id="jpath">
+		</div>
+<div class="row">
+	<div class="large-12 columns" id="facebookPosts" style="min-height:720px;">
+	</div>
+	<div class="large-12 columns" style="margin:2px;">
+		<ul class="pagination" id="postnavi">
+		</ul>
+	</div>
+</div>
+<script>
+var getUrlParameter = function getUrlParameter(sParam) {
+	var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+		sURLVariables = sPageURL.split('&'),
+		sParameterName,
+		i;
+
+	for (i = 0; i < sURLVariables.length; i++) {
+		sParameterName = sURLVariables[i].split('=');
+
+		if (sParameterName[0] === sParam) {
+			return sParameterName[1] === undefined ? true : sParameterName[1];
+		}
+	}
+};
+function loadPage() {
+	var current = getUrlParameter('current');
+	$.getJSON("/api/facebookpostlist", {current: current}, function(data) {
+		$.each(data.Node.item, function(key, value) {
+			var item =
+			['<div class="fb-post" data-href="https://www.facebook.com/20531316728/posts/'+value.id+'/" data-width="350" style="margin:2px;">',
+			'<div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/20531316728/posts/'+value.id+'/">',
+			'<a href="https://www.facebook.com/facebook/">Facebook</a>에 의해 게시 됨&nbsp;',
+			'<a href="https://www.facebook.com/20531316728/posts/'+value.id+'/">2015년 8월 27일 목요일</a>',
+			'</blockquote></div></div>'].join("\n")
+			$("#facebookPosts").append(item)
+		})
+    
+		var pages = new Array()    
+		for (i = 1; i < data.Node.pages+1; i++) {
+			if (data.Node.current == i) {
+				pages.push('<li><a href="?current='+i+'" class="current" id="repage" value="'+i.toString()+'">'+i.toString()+'</a></li>')
+			} else {
+				pages.push('<li><a href="?current='+i+'" id="repage" value="'+i.toString()+'">'+i.toString()+'</a></li>')
+			}
+    	}
+    	$("#postnavi").html(pages.join("\n"))
+	}) 
+}
+$(document).ready(loadPage())
+</script>
+
+<p></p>
+
+<div class="row"><div class="small-12 columns"><h4 class="head"> 최근 변경된 글 </h4></div></div>
+
+	<a href="/w/man/12/ttyjs" class="button secondary">tty.js</a>
+
+	<a href="/w/man/12/REDIS/DataModeling" class="button secondary">REDIS 데이터 모델링 예제들</a>
+
+	<a href="/w/man/12/docker/InfrastructureForDocker/network" class="button secondary">도커 네트워크</a>
+
+	<a href="/w/GoLang/example" class="button secondary">예제로 살펴보는 Go 언어</a>
+
+	<a href="/w/Site/cloud/NetworkVirtualization/tunneling" class="button secondary">Tunneling</a>
+
+	<a href="/w/man/12/REDIS/Commands" class="button secondary">Redis Command 목록</a>
+
+	<a href="/w/GoLang/example/commandlineflag" class="button secondary">예제로 살펴보는 Go : Command-Line Flags</a>
+
+	<a href="/w/man/12/golang" class="button secondary">golang</a>
+
+	<a href="/w/GoLang/example/variables" class="button secondary">예제로 살펴보는 Go : Variables</a>
+
+	<a href="/w/GoLang/example/commandlinearg" class="button secondary">예제로 살펴보는 Go : Command Line Arguments</a>
+
+	<a href="/w/GoLang/example/lineFilters" class="button secondary">예제로 살펴보는 Go : Line Filters</a>
+
+	<a href="/w/man/12/deb" class="button secondary">우분투 apt 패키지 저장소 구축</a>
+
+	<a href="/w/man/12/electron" class="button secondary">Electron</a>
+
+	<a href="/w/man/12/jwt" class="button secondary">JWT</a>
+
+	<a href="/w/man/12/docker/InfrastructureForDocker" class="button secondary">가상화와 도커에 대해서</a>
+
+	<a href="/w/man/12/docker/InfrastructureForDocker/docker" class="button secondary">도커 개요</a>
+
+	<a href="/w/test" class="button secondary">Test Page</a>
+
+	<a href="/w/man/12/powerdns" class="button secondary">PowerDNS</a>
+
+	<a href="/w/Site/Ruby/LambdawithDSL" class="button secondary">Ruby DSL을 이용한 Lambda 서비스 구현</a>
+
+	<a href="/w/man/12/ELK" class="button secondary">ELK Stack 설치</a>
+
+	<a href="/w/man/12/docker/ovsplugin" class="button secondary">Docker OpenvSwitch Plugin</a>
+
+	<a href="/w/man/12/docker/InfrastructureForDocker/about" class="button secondary">도커와 가상화</a>
+
+	<a href="/w/man/12/multitenancy" class="button secondary">Multi tenancy</a>
+
+	<a href="/w/Site/cloud/AWS/NTP" class="button secondary">AWS에서 NTP 설정</a>
+
+	<a href="/w/man/12/solr" class="button secondary">Solr</a>
+
+	<a href="/w/GoLang/example/writefile" class="button secondary">예제로 살펴보는 Go : 파일 쓰기</a>
+
+	<a href="/w/Site/Search/Document/Solr" class="button secondary">Solr로 로컬 검색서비스 만들기</a>
+
+	<a href="/w/Site/Linux/Documents/UbuntuPackageManagement" class="button secondary">Ubuntu 패키지 관리하기</a>
+
+	<a href="/w/GoLang/example/readfile" class="button secondary">예제로 살펴보는 Go : 파일 읽기</a>
+
+	<a href="/w/man/12/nginx/static" class="button secondary">NginX를 이용한 static 컨텐츠 서비스 와 캐시 설정</a>
+
+
+		
+		
+<p></p>
+
+
+<div class="large-12 columns" id="footnote">
+</div>
+<div class="large-12 columns">
+<div id="footnote_item">
+	<ol>
+	</ol>
+</div>
+
+</div> 
+</div> 
+
+<script>
+$(document).foundation();
+</script>
+
+<div class="row">
+<div class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button_count" href="http://www.joinc.co.kr/pid=4"></div>
+<div class="fb-comments" data-href="https://developers.facebook.com/docs/plugins/comments#configurator" data-numposts="5" href="http://www.joinc.co.kr/pid=4" width="100%"></div>
+</div>
+
+</body>
+</html>

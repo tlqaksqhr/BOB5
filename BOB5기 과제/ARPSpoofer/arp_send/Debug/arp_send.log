@@ -1,0 +1,25 @@
+﻿Build started 2016-07-22 오전 12:00:21.
+     1>Project "C:\Users\semtax\documents\visual studio 2013\Projects\arp_send\arp_send\arp_send.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /IC:\WpdPack\Include /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D WPCAP /D HAVE_REMOTE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt arp_send.cpp
+         arp_send.cpp
+     1>c:\users\semtax\documents\visual studio 2013\projects\arp_send\arp_send\arp_send.cpp(87): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files\microsoft visual studio 12.0\vc\include\stdio.h(283) : see declaration of 'scanf'
+     1>c:\users\semtax\documents\visual studio 2013\projects\arp_send\arp_send\arp_send.cpp(186): warning C4996: 'inet_addr': Use inet_pton() or InetPton() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
+                 c:\program files\windows kits\8.1\include\um\winsock2.h(1850) : see declaration of 'inet_addr'
+     1>c:\users\semtax\documents\visual studio 2013\projects\arp_send\arp_send\arp_send.cpp(187): warning C4996: 'inet_addr': Use inet_pton() or InetPton() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
+                 c:\program files\windows kits\8.1\include\um\winsock2.h(1850) : see declaration of 'inet_addr'
+     1>c:\users\semtax\documents\visual studio 2013\projects\arp_send\arp_send\arp_send.cpp(165): warning C4101: 'addr' : unreferenced local variable
+     1>c:\users\semtax\documents\visual studio 2013\projects\arp_send\arp_send\arp_send.cpp(242): warning C4996: 'inet_addr': Use inet_pton() or InetPton() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
+                 c:\program files\windows kits\8.1\include\um\winsock2.h(1850) : see declaration of 'inet_addr'
+     1>c:\users\semtax\documents\visual studio 2013\projects\arp_send\arp_send\arp_send.cpp(243): warning C4996: 'inet_addr': Use inet_pton() or InetPton() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
+                 c:\program files\windows kits\8.1\include\um\winsock2.h(1850) : see declaration of 'inet_addr'
+       Link:
+         C:\Program Files\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\semtax\documents\visual studio 2013\Projects\arp_send\Debug\arp_send.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:C:\WpdPack\Lib wpcap.lib Packet.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\semtax\documents\visual studio 2013\Projects\arp_send\Debug\arp_send.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\semtax\documents\visual studio 2013\Projects\arp_send\Debug\arp_send.lib" /MACHINE:X86 ws2_32.lib Debug\arp_send.obj
+     1>arp_send.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/OPT:LBR' specification
+         arp_send.vcxproj -> C:\Users\semtax\documents\visual studio 2013\Projects\arp_send\Debug\arp_send.exe
+     1>Done Building Project "C:\Users\semtax\documents\visual studio 2013\Projects\arp_send\arp_send\arp_send.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:01.30

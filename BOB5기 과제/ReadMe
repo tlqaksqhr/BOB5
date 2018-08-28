@@ -1,0 +1,5 @@
+libpcap compile :  test2.c -o test2 -lpcap
+libnet compile :
+test2.c -o test2 -lnet
+or
+gcc -ggdb -Wall `libnet-config --defines` `libnet-config --libs` example.c -o example
